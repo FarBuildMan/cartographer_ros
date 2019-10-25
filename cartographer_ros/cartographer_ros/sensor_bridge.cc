@@ -133,7 +133,7 @@ std::unique_ptr<carto::sensor::ImuData> SensorBridge::ToImuData(
   if (sensor_to_tracking == nullptr) {
     return nullptr;
   }
-  CHECK(sensor_to_tracking->translation().norm() < 1e-5)
+  CHECK(sensor_to_tracking->translation().norm() < 1e-1)
       << "The IMU frame must be colocated with the tracking frame. "
          "Transforming linear acceleration into the tracking frame will "
          "otherwise be imprecise.";
